@@ -7,6 +7,12 @@
     <title>@ViewBag.Title - Controle de Estoque</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        ul li::after {
+            background-color: #337ab7 !important;
+            color: #fff !important;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -20,7 +26,7 @@
                 @Html.ActionLink("Controle de Estoque", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"> 
+                <ul class="nav navbar-nav">
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Cadastros
@@ -32,10 +38,12 @@
                             <li>@Html.ActionLink("Locais Armazenamento", "LocalProduto", "Cadastro")</li>
                             <li>@Html.ActionLink("Unidades de Medida", "UnidadeMedida", "Cadastro")</li>
                             <li>@Html.ActionLink("Produtos", "Produto", "Cadastro")</li>
+                            <li class="nav-divider"></li>
                             <li>@Html.ActionLink("Países", "Pais", "Cadastro")</li>
                             <li>@Html.ActionLink("Estados", "Estado", "Cadastro")</li>
                             <li>@Html.ActionLink("Cidades", "Cidade", "Cadastro")</li>
                             <li>@Html.ActionLink("Fornecedores", "Fornecedor", "Cadastro")</li>
+                            <li class="nav-divider"></li>
                             <li>@Html.ActionLink("Perfis de Usuários", "PerfilUsuario", "Cadastro")</li>
                             <li>@Html.ActionLink("Usuários", "Usuario", "Cadastro")</li>
                         </ul>

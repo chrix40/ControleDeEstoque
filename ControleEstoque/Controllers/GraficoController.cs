@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ControleEstoque.Controllers
 {
+    [Authorize]
     public class GraficoController : Controller
     {
         // GET: Grafico
