@@ -169,4 +169,3 @@ D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.csproj.CoreCompileI
 D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.csproj.CopyComplete
 D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.dll
 D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.pdb
-D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.csproj.AssemblyReference.cache

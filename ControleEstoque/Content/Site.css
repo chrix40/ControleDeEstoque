@@ -22,3 +22,23 @@ select,
 textarea {
     max-width: 280px;
 }
+.container-login {
+    width: 400px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.titulo-login {
+    margin-left: 55px;
+    padding-bottom: 20px;
+}
+.conteudo-topo {
+    width: 100%;
+    height: 7%;
+}
+.conteudo-topo-texto {
+    /*margin-top: 10px;
+    height: 10%;*/
+}
+.controle{
+    margin-top: 10px;
+}
