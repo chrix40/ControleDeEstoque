@@ -165,6 +165,7 @@ D:\ControleEstoque\ControleEstoque\bin\pt-br\System.Web.Razor.resources.dll
 D:\ControleEstoque\ControleEstoque\bin\pt-br\System.Web.WebPages.resources.dll
 D:\ControleEstoque\ControleEstoque\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 D:\ControleEstoque\ControleEstoque\bin\pt-br\System.Web.WebPages.Razor.resources.dll
+D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.csproj.AssemblyReference.cache
 D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.csproj.CoreCompileInputs.cache
 D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.csproj.CopyComplete
 D:\ControleEstoque\ControleEstoque\obj\Debug\ControleEstoque.dll

@@ -42,3 +42,6 @@ textarea {
 .controle{
     margin-top: 10px;
 }
+.invisivel{
+    display: none;
+}
