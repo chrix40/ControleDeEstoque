@@ -13,55 +13,76 @@ namespace ControleEstoque.Controllers
         {
             new GrupoProdutoModel() {Id=1, Nome="Livros", Ativo=true },
             new GrupoProdutoModel() {Id=2, Nome="Mouse Razor", Ativo=true },
-            new GrupoProdutoModel() {Id=3, Nome="Monitores", Ativo=false },
-            new GrupoProdutoModel() {Id=4, Nome="Iphones", Ativo=true },
-
+            new GrupoProdutoModel() {Id=3, Nome="Monitores", Ativo=false }
         };
 
         [Authorize]
         public ActionResult GrupoProduto()
         {
-            return View(_ListaGrupoProduto);
+            return View(GrupoProdutoModel.RecuperarLista());
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult RecuperarGrupoProduto(int id)
         {
-            return Json(_ListaGrupoProduto.Find(x => x.Id == id));
+            //return Json(_ListaGrupoProduto.Find(x => x.Id == id));
+            return Json(GrupoProdutoModel.RecuperarPeloId(id));
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult ExcluirGrupoProduto(int id)
         {
-            var ret = false;
-            var registoBD = _ListaGrupoProduto.Find(x => x.Id == id);
-            if (registoBD != null)
-            {
-                _ListaGrupoProduto.Remove(registoBD);
-            }
-            return Json(ret);
+            return Json(GrupoProdutoModel.ExcluirPeloId(id));
         }
 
         [HttpPost]
         [Authorize]
         public ActionResult SalvarGrupoProduto(GrupoProdutoModel model)
         {
-            var registoBD = _ListaGrupoProduto.Find(x => x.Id == model.Id);
-
-            if (registoBD == null)
+            //var registroBD = _ListaGrupoProduto.Find(x => x.Id == model.Id);
+            //if (registroBD == null)
+            //{
+            //    registroBD = model;
+            //    registroBD.Id = _ListaGrupoProduto.Max(x => x.Id) + 1;
+            //    _ListaGrupoProduto.Add(registroBD);
+            //}
+            //else
+            //{
+            //    registroBD.Nome = model.Nome;
+            //    registroBD.Ativo = model.Ativo;
+            //}
+            var resultado = "OK";
+            var mensagens = new List<string>();
+            var idSalvo = string.Empty;
+            if (!ModelState.IsValid)
             {
-                registoBD = model;
-                registoBD.Id = _ListaGrupoProduto.Max(x => x.Id) + 1;
-                _ListaGrupoProduto.Add(registoBD);
+                resultado = "AVISO";
+                mensagens = ModelState.Values.SelectMany(x => x.Errors).Select(x => x.ErrorMessage).ToList();
             }
             else
             {
-                registoBD.Nome = model.Nome;
-                registoBD.Ativo = model.Ativo;
+                try
+                {
+                    var id = model.Salvar();
+                    if (id > 0 )
+                    {
+                        idSalvo = id.ToString();
+                    }
+                    else
+                    {
+                        resultado = "ERRO";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    resultado = "ERRO";
+                }
+
             }
-            return Json(registoBD);
+            
+            return Json(new { Resultado = resultado, Mensagens = mensagens, IdSalvo = idSalvo});
         }
 
         [Authorize]
